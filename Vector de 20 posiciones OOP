@@ -1,0 +1,41 @@
+//La clase Scanner se utiliza para leer la entrada del usuario desde la consola y facilita la interacción user/programa
+import java.util.Scanner;
+
+//Al declarar esta clase publica podemos contener métodos y variables relacionados con la multiplicación de vectores	
+public class VectorMultiplication {
+	    public static void main(String[] args) {
+	    	// Creación del objeto Scanner para leer la entrada del usuario
+	        Scanner scanner = new Scanner(System.in);
+
+        // Declaración e inicialización del vector de veinte posiciones usando int ya que se hara con numeros enteros
+        int[] vector = new int[20];
+
+        // Primer linea vista Ingresar el vector de veinte posiciones
+        System.out.println("Ingrese los elementos del vector:");
+        //For se utiliza para recorrer el vector. La variable i se utiliza como contador para acceder a cada elemento del vector.
+        for (int i = 0; i < vector.length; i++) {
+            // Da lectura de cada elemento del vector y almacenamiento en vector[i]
+            System.out.print("Posicion " + (i + 1) + ": ");
+            vector[i] = scanner.nextInt();
+        }
+
+        // Segunda linea vista Multiplicar por un escalar
+        System.out.print("Ingrese el número escalar para multiplicar el vector: ");
+        int numero = scanner.nextInt();
+
+        // Recorre el vector para multiplicar cada elemento por el escalar
+        for (int i = 0; i < vector.length; i++) {
+            vector[i] *= numero;
+        }
+
+        // Resultado del vector 
+        System.out.println("El vector resultante es:");
+        for (int i = 0; i < vector.length; i++) {
+            // Mostrar cada elemento del vector resultante
+            System.out.print(vector[i] + " ");
+        }
+
+        // Es importante cerrar el objeto Scanner para evitar fugas de memoria y otros problemas
+        scanner.close();
+    }
+	}
